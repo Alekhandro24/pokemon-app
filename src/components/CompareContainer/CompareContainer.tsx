@@ -1,6 +1,11 @@
 import React from "react";
-import { pokemonTypeInterfase, userPokemonsType } from "../../utils/Types";
+import {
+  pokemonStatType,
+  pokemonTypeInterfase,
+  userPokemonsType,
+} from "../../utils/Types";
 import { FaPlus } from "react-icons/fa";
+import { pokemonTypes } from "../../utils/getPokemonTypes";
 
 const CompareContainer = ({
   pokemon = undefined,
@@ -9,7 +14,99 @@ const CompareContainer = ({
   pokemon?: userPokemonsType;
   isEmpty?: boolean;
 }) => {
-  const getStats = () => {};
+  const createStatsArray = (
+    types: pokemonTypeInterfase[],
+    statType: pokemonStatType
+  ) => {
+    const statsArray: { name: string; image: string }[] = [];
+    const statsSet = new Set<string>();
+
+    types.forEach((type: pokemonTypeInterfase) => {
+      const key = Object.keys(type)[0];
+      type[key][statType].forEach((stat: string) => {
+        if (!statsSet.has(stat)) {
+          //@ts-ignore
+          statsArray.push({ name: string, image: pokemonTypes[stat].image });
+          statsSet.add(stat);
+        }
+      });
+    });
+    return statsArray;
+  };
+
+  const getStats = () => {
+    return (
+      <>
+        <div className="pokemon-types">
+          <h4 className="pokemon-type-title">Strength</h4>
+          <div className="pokemon-type-icons">
+            {createStatsArray(pokemon?.types!, "strength").map(
+              (stat: { image: string }) => (
+                <div className="pokemon-type">
+                  <img
+                    src={stat.image}
+                    alt="pokemon type"
+                    className="pokemon-type-image"
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
+
+        <div className="pokemon-types">
+          <h4 className="pokemon-type-title">Resistance</h4>
+          <div className="pokemon-type-icons">
+            {createStatsArray(pokemon?.types!, "resistance").map(
+              (stat: { image: string }) => (
+                <div className="pokemon-type">
+                  <img
+                    src={stat.image}
+                    alt="pokemon type"
+                    className="pokemon-type-image"
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
+
+        <div className="pokemon-types">
+          <h4 className="pokemon-type-title">Vulnarable</h4>
+          <div className="pokemon-type-icons">
+            {createStatsArray(pokemon?.types!, "vulnerable").map(
+              (stat: { image: string }) => (
+                <div className="pokemon-type">
+                  <img
+                    src={stat.image}
+                    alt="pokemon type"
+                    className="pokemon-type-image"
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
+
+        <div className="pokemon-types">
+          <h4 className="pokemon-type-title">Weakness</h4>
+          <div className="pokemon-type-icons">
+            {createStatsArray(pokemon?.types!, "weakness").map(
+              (stat: { image: string }) => (
+                <div className="pokemon-type">
+                  <img
+                    src={stat.image}
+                    alt="pokemon type"
+                    className="pokemon-type-image"
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </>
+    );
+  };
 
   return (
     <div className="compare-container">
@@ -50,7 +147,7 @@ const CompareContainer = ({
                   })}
                 </div>
               </div>
-              {/* {getStats} */}
+              {getStats()}
             </div>
           </div>
           <div className="compare-action-buttons">
