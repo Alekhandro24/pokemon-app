@@ -1,5 +1,5 @@
 import React from "react";
-import { pokemonTypeInterfase, userPokemonsType } from "../../utils/Types";
+import { pokemonTypeInterface, userPokemonsType } from "../../utils/Types";
 import { IoGitCompare } from "react-icons/io5";
 import { FaPlus, FaTrash } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -49,7 +49,7 @@ const PokemonCardGrid = ({ pokemons }: { pokemons: userPokemonsType[] }) => {
 
                 <div className="pokemon-card-types">
                   {data.types.map(
-                    (type: pokemonTypeInterfase, index: number) => {
+                    (type: pokemonTypeInterface, index: number) => {
                       const keys = Object.keys(type);
 
                       return (
