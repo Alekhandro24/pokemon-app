@@ -1,7 +1,16 @@
 import React from "react";
 import Wrapper from "../sections/Wrapper";
+import { useAppSelector } from "../app/hooks";
+import Login from "../components/Login/Login";
+
 const MyList = () => {
-  return <div>MyList</div>;
+  const { userInfo } = useAppSelector(({ app }) => app);
+
+  return (
+    <div className="list">
+      <Login />
+    </div>
+  );
 };
 
 export default Wrapper(MyList);
