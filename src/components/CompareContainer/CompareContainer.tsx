@@ -1,11 +1,14 @@
 import React from "react";
 import {
   pokemonStatType,
-  pokemonTypeInterfase,
+  pokemonTypeInterface,
   userPokemonsType,
 } from "../../utils/Types";
 import { FaPlus } from "react-icons/fa";
 import { pokemonTypes } from "../../utils/getPokemonTypes";
+import { useAppDispatch } from "../../app/hooks";
+import { removeFromCompare } from "../../app/slices/PokemonSlice";
+import { useNavigate } from "react-router-dom";
 
 const CompareContainer = ({
   pokemon = undefined,
@@ -14,14 +17,17 @@ const CompareContainer = ({
   pokemon?: userPokemonsType;
   isEmpty?: boolean;
 }) => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
   const createStatsArray = (
-    types: pokemonTypeInterfase[],
+    types: pokemonTypeInterface[],
     statType: pokemonStatType
   ) => {
     const statsArray: { name: string; image: string }[] = [];
     const statsSet = new Set<string>();
 
-    types.forEach((type: pokemonTypeInterfase) => {
+    types.forEach((type: pokemonTypeInterface) => {
       const key = Object.keys(type)[0];
       type[key][statType].forEach((stat: string) => {
         if (!statsSet.has(stat)) {
@@ -133,7 +139,7 @@ const CompareContainer = ({
               <div className="pokemon-types">
                 <h4 className="pokemon-type-title">Type</h4>
                 <div className="pokemon-type-icons">
-                  {pokemon?.types.map((type: pokemonTypeInterfase) => {
+                  {pokemon?.types.map((type: pokemonTypeInterface) => {
                     const keys = Object.keys(type);
                     return (
                       <div className="pokemon-type">
@@ -152,8 +158,18 @@ const CompareContainer = ({
           </div>
           <div className="compare-action-buttons">
             <button className="compare-btn">Add</button>
-            <button className="compare-btn">View</button>
-            <button className="compare-btn">Remove</button>
+            <button
+              className="compare-btn"
+              onClick={() => navigate(`/pokemon/${pokemon.id}`)}
+            >
+              View
+            </button>
+            <button
+              className="compare-btn"
+              onClick={() => dispatch(removeFromCompare({ id: pokemon.id }))}
+            >
+              Remove
+            </button>
           </div>
         </div>
       )}
