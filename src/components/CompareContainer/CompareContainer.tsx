@@ -9,6 +9,7 @@ import { pokemonTypes } from "../../utils/getPokemonTypes";
 import { useAppDispatch } from "../../app/hooks";
 import { removeFromCompare } from "../../app/slices/PokemonSlice";
 import { useNavigate } from "react-router-dom";
+import { addPokemonToList } from "../../app/reducers/addPokemonToList";
 
 const CompareContainer = ({
   pokemon = undefined,
@@ -29,10 +30,11 @@ const CompareContainer = ({
 
     types.forEach((type: pokemonTypeInterface) => {
       const key = Object.keys(type)[0];
+
       type[key][statType].forEach((stat: string) => {
         if (!statsSet.has(stat)) {
           //@ts-ignore
-          statsArray.push({ name: string, image: pokemonTypes[stat].image });
+          statsArray.push({ name: stat, image: pokemonTypes[stat].image });
           statsSet.add(stat);
         }
       });
@@ -157,7 +159,12 @@ const CompareContainer = ({
             </div>
           </div>
           <div className="compare-action-buttons">
-            <button className="compare-btn">Add</button>
+            <button
+              className="compare-btn"
+              onClick={() => dispatch(addPokemonToList(pokemon))}
+            >
+              Add
+            </button>
             <button
               className="compare-btn"
               onClick={() => navigate(`/pokemon/${pokemon.id}`)}
