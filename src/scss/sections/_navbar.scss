@@ -58,7 +58,7 @@ nav {
   z-index: 0;
   bottom: 0;
   width: 20%;
-  background-color: #fff;
+  background-color: var(--accent-color);
   height: calc(4px / 2);
   mix-blend-mode: initial;
   pointer-events: none;
