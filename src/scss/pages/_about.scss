@@ -20,7 +20,9 @@
   &-image {
     height: 10rem;
     border-radius: 50%;
+    border: 0.3rem solid var(--accent-color);
     background-color: white;
+    padding: 1rem;
   }
 
   &-links {
