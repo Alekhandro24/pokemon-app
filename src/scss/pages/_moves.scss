@@ -1,0 +1,45 @@
+.capable-moves {
+  width: 100%;
+  height: 80vh;
+  overflow-y: scroll;
+
+  .capable-moves-title {
+    padding: 1rem;
+    color: white;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+
+  .capable-moves-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 150px;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    list-style-type: none;
+    color: white;
+    overflow-y: scroll;
+
+    .move {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      align-items: center;
+      height: 100%;
+      padding: 2rem;
+      border-radius: 1rem;
+      font-size: x-large;
+      background-color: (255, 255, 255, 0.125);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      cursor: pointer;
+    }
+  }
+
+  .ability {
+    .move {
+      background-color: var(--accent-color);
+    }
+  }
+}
