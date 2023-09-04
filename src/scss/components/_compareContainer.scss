@@ -1,145 +1,167 @@
-.compare-container {
-  width: 100%;
-  height: 100%;
-
-  .empty {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+@media screen and (min-width: 576px) {
+  .compare-container {
+    width: 100%;
     height: 100%;
 
-    button {
+    .empty {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      border: none;
-      border-radius: 10rem;
-      padding: 2rem;
-      background-color: var(--accent-color);
-      cursor: pointer;
+      gap: 3rem;
+      height: 100%;
 
-      svg {
-        font-size: 5rem;
-        color: whitesmoke;
-      }
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 10rem;
+        padding: 2rem;
+        background-color: var(--accent-color);
+        cursor: pointer;
 
-      h3 {
-        color: white;
-        letter-spacing: 0.3rem;
-        text-transform: uppercase;
+        svg {
+          font-size: 5rem;
+          color: whitesmoke;
+        }
+
+        h3 {
+          color: white;
+          letter-spacing: 0.3rem;
+          text-transform: uppercase;
+        }
       }
     }
   }
-}
 
-.compare-element {
-  height: 100%;
-  display: grid;
-  grid-template-rows: 90% 10%;
-  grid-template-columns: 1fr;
-
-  .compare-info {
+  .compare-element {
+    height: 100%;
     display: grid;
-    grid-template-rows: 40% 60%;
-    width: 100%;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    grid-template-rows: 90% 10%;
+    grid-template-columns: 1fr;
 
-    .compare-details {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      .compare-image {
-        height: 10rem;
-      }
-    }
-
-    .pokemon-types-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
+    .compare-info {
+      display: grid;
+      grid-template-rows: 40% 60%;
       width: 100%;
-      max-height: 100%;
-      padding: 1rem;
-      overflow-y: scroll;
-      overflow-x: hidden;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: -0.05rem;
 
-      .pokemon-types {
-        display: grid;
-        grid-template-columns: 25% 75%;
-        gap: 2rem;
-        width: 100%;
+      .compare-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-        .pokemon-type-title {
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
+        .compare-image {
+          height: 10rem;
         }
+      }
 
-        .pokemon-type-icons {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
+      .pokemon-types-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+        max-height: 100%;
+        padding: 1rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        .pokemon-types {
+          display: grid;
+          grid-template-columns: 40% 60%;
+          gap: 2rem;
           width: 100%;
 
-          .pokemon-type {
+          .pokemon-type-title {
             display: flex;
             justify-content: flex-end;
             align-items: center;
+          }
 
-            .pokemon-type-image {
-              width: 3rem;
-              height: 3rem;
+          .pokemon-type-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+
+            .pokemon-type {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+
+              .pokemon-type-image {
+                width: 2rem;
+                height: 2rem;
+              }
             }
           }
         }
       }
     }
+    .compare-action-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      height: 100%;
+
+      button {
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        border: 1px solid ragba(255, 255, 255, 0.647);
+        background-color: transparent;
+        color: rgba(228, 228, 228);
+        letter-spacing: 0.1rem;
+        cursor: pointer;
+
+        transition: 0.3s ease-in-out;
+
+        &:nth-of-type(1) {
+          &:hover {
+            background-color: #1f51ff;
+            border-color: #1f51ff;
+          }
+        }
+
+        &:nth-of-type(2) {
+          &:hover {
+            background-color: #27af0f;
+            border-color: #27af0f;
+          }
+        }
+
+        &:nth-of-type(3) {
+          &:hover {
+            background-color: #e21b5a;
+            border-color: #e21b5a;
+          }
+        }
+      }
+    }
   }
-  .compare-action-buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    height: 100%;
+}
 
-    button {
-      font-size: 1.2rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      border: 1px solid ragba(255, 255, 255, 0.647);
-      background-color: transparent;
-      color: rgba(228, 228, 228);
+@media screen and (min-width: 992px) {
+  .compare-element {
+    .compare-info {
+      .pokemon-types-container {
+        .pokemon-types {
+          grid-template-columns: 25% 75%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .compare-element {
+    .compare-info {
       letter-spacing: 0.1rem;
-      cursor: pointer;
-
-      transition: 0.3s ease-in-out;
-
-      &:nth-of-type(1) {
-        &:hover {
-          background-color: #1f51ff;
-          border-color: #1f51ff;
-        }
-      }
-
-      &:nth-of-type(2) {
-        &:hover {
-          background-color: #27af0f;
-          border-color: #27af0f;
-        }
-      }
-
-      &:nth-of-type(3) {
-        &:hover {
-          background-color: #e21b5a;
-          border-color: #e21b5a;
-        }
-      }
     }
   }
 }
