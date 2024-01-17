@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import Wrapper from "../sections/Wrapper";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { getInitialPokemonData } from "../app/reducers/getInitialPokemonData";
 import { getPokemonData } from "../app/reducers/getPokemonData";
+import { setToast } from "../app/slices/AppSlice";
 import PokemonCardGrid from "../components/PokemonCardGrid/PokemonCardGrid";
+import Wrapper from "../sections/Wrapper";
 import { debounce } from "../utils/Debounce";
 
 const Search = () => {
@@ -33,6 +34,9 @@ const Search = () => {
       const pokemons = allPokemon?.filter((pokemon) =>
         pokemon.name.includes(value.toLowerCase())
       );
+      if (!pokemons || !pokemons.length) {
+        dispatch(setToast(`There is no pokemons with such name.`));
+      }
       dispatch(getPokemonData(pokemons!));
     } else {
       const clonedPokemons = [...(allPokemon as [])];
@@ -52,7 +56,11 @@ const Search = () => {
           placeholder="Search Pokemon"
           onChange={(e) => handleChange(e.target.value)}
         />
-        <PokemonCardGrid pokemons={randomPokemons!} />
+        {!randomPokemons ? (
+          "Pending"
+        ) : (
+          <PokemonCardGrid pokemons={randomPokemons!} />
+        )}
       </div>
       ;
     </>
