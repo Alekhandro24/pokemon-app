@@ -26,7 +26,7 @@ footer {
 
     ul {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
       height: 100%;
       list-style-type: none;
       color: white;
@@ -37,7 +37,7 @@ footer {
         align-items: center;
         text-transform: uppercase;
         font-weight: 500;
-        letter-spacing: 0.2rem;
+
         transition: 0.3s ease-in-out;
         cursor: pointer;
 
@@ -48,6 +48,32 @@ footer {
 
       .active {
         background-color: var(--accent-color);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  footer {
+    .data {
+      border: 0.5px solid rgba(255, 255, 255, 0.23);
+      border-top: none;
+      border-bottom: none;
+
+      ul {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    .data {
+      ul {
+        li {
+          letter-spacing: 0.2rem;
+        }
       }
     }
   }
