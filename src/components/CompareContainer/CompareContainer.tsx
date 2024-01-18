@@ -1,15 +1,14 @@
-import React from "react";
+import { FaPlus } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../app/hooks";
+import { addPokemonToList } from "../../app/reducers/addPokemonToList";
+import { removeFromCompare } from "../../app/slices/PokemonSlice";
 import {
   pokemonStatType,
   pokemonTypeInterface,
   userPokemonsType,
 } from "../../utils/Types";
-import { FaPlus } from "react-icons/fa";
 import { pokemonTypes } from "../../utils/getPokemonTypes";
-import { useAppDispatch } from "../../app/hooks";
-import { removeFromCompare } from "../../app/slices/PokemonSlice";
-import { useNavigate } from "react-router-dom";
-import { addPokemonToList } from "../../app/reducers/addPokemonToList";
 
 const CompareContainer = ({
   pokemon = undefined,
@@ -130,7 +129,7 @@ const CompareContainer = ({
         <div className="compare-element">
           <div className="compare-info">
             <div className="compare-details">
-              <h3>{pokemon?.name}</h3>
+              <h3 className="compare-name">{pokemon?.name}</h3>
               <img
                 src={pokemon?.image}
                 alt="pokemon"
