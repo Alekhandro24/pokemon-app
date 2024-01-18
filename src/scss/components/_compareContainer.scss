@@ -1,144 +1,169 @@
-@media screen and (min-width: 576px) {
-  .compare-container {
-    width: 100%;
+.compare-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 5rem;
+
+  .empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
     height: 100%;
 
-    .empty {
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 10rem;
+      padding: 2rem;
+      background-color: var(--accent-color);
+      cursor: pointer;
+
+      svg {
+        font-size: 5rem;
+        color: whitesmoke;
+      }
+
+      h3 {
+        color: white;
+        letter-spacing: 0.3rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.compare-element {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 90% 10%;
+  grid-template-columns: 1fr;
+
+  .compare-info {
+    display: grid;
+    grid-template-rows: 40% 60%;
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -0.05rem;
+
+    .compare-details {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
-      height: 100%;
 
-      button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        border-radius: 10rem;
-        padding: 2rem;
-        background-color: var(--accent-color);
-        cursor: pointer;
+      .compare-name {
+        margin-top: 3rem;
+      }
 
-        svg {
-          font-size: 5rem;
-          color: whitesmoke;
+      .compare-image {
+        height: 10rem;
+      }
+    }
+
+    .pokemon-types-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      width: 100%;
+      max-height: 100%;
+      padding: 1rem;
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+      .pokemon-types {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        gap: 2rem;
+        width: 100%;
+
+        .pokemon-type-title {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
         }
 
-        h3 {
-          color: white;
-          letter-spacing: 0.3rem;
-          text-transform: uppercase;
+        .pokemon-type-icons {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          width: 100%;
+
+          .pokemon-type {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            .pokemon-type-image {
+              width: 2rem;
+              height: 2rem;
+            }
+          }
         }
       }
     }
   }
-
-  .compare-element {
-    height: 100%;
+  .compare-action-buttons {
     display: grid;
-    grid-template-rows: 90% 10%;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
 
-    .compare-info {
-      display: grid;
-      grid-template-rows: 40% 60%;
-      width: 100%;
-      color: white;
+    button {
+      font-size: 1.2rem;
+      font-weight: 400;
       text-transform: uppercase;
-      letter-spacing: -0.05rem;
+      border: 1px solid ragba(255, 255, 255, 0.647);
+      background-color: transparent;
+      color: rgba(228, 228, 228);
+      letter-spacing: 0.1rem;
+      cursor: pointer;
 
+      transition: 0.3s ease-in-out;
+
+      &:nth-of-type(1) {
+        &:hover {
+          background-color: #1f51ff;
+          border-color: #1f51ff;
+        }
+      }
+
+      &:nth-of-type(2) {
+        &:hover {
+          background-color: #27af0f;
+          border-color: #27af0f;
+        }
+      }
+
+      &:nth-of-type(3) {
+        &:hover {
+          background-color: #e21b5a;
+          border-color: #e21b5a;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .compare-element {
+    .compare-info {
       .compare-details {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
         .compare-image {
           height: 10rem;
         }
       }
 
       .pokemon-types-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
         gap: 1rem;
-        width: 100%;
-        max-height: 100%;
-        padding: 1rem;
-        overflow-y: scroll;
-        overflow-x: hidden;
 
         .pokemon-types {
-          display: grid;
-          grid-template-columns: 40% 60%;
-          gap: 2rem;
-          width: 100%;
-
-          .pokemon-type-title {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-          }
-
           .pokemon-type-icons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            width: 100%;
-
-            .pokemon-type {
-              display: flex;
-              justify-content: flex-end;
-              align-items: center;
-
-              .pokemon-type-image {
-                width: 2rem;
-                height: 2rem;
-              }
-            }
-          }
-        }
-      }
-    }
-    .compare-action-buttons {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      width: 100%;
-      height: 100%;
-
-      button {
-        font-size: 1.2rem;
-        font-weight: 400;
-        text-transform: uppercase;
-        border: 1px solid ragba(255, 255, 255, 0.647);
-        background-color: transparent;
-        color: rgba(228, 228, 228);
-        letter-spacing: 0.1rem;
-        cursor: pointer;
-
-        transition: 0.3s ease-in-out;
-
-        &:nth-of-type(1) {
-          &:hover {
-            background-color: #1f51ff;
-            border-color: #1f51ff;
-          }
-        }
-
-        &:nth-of-type(2) {
-          &:hover {
-            background-color: #27af0f;
-            border-color: #27af0f;
-          }
-        }
-
-        &:nth-of-type(3) {
-          &:hover {
-            background-color: #e21b5a;
-            border-color: #e21b5a;
+            gap: 0.5rem;
           }
         }
       }
@@ -146,6 +171,11 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .compare-container {
+    margin-top: 0;
+  }
+}
 @media screen and (min-width: 992px) {
   .compare-element {
     .compare-info {
