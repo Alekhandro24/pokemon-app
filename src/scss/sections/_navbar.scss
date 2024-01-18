@@ -49,32 +49,32 @@ nav {
   }
 }
 
-.underline {
-  display: block;
-  position: absolute;
-  z-index: 0;
-  bottom: 0;
-  width: 20%;
-  background-color: var(--accent-color);
-  height: calc(4px / 2);
-  mix-blend-mode: initial;
-  pointer-events: none;
-  transition: 0.5 ease-in-out;
-
-  &:nth-child(1) {
-    transition: calc(0.5s * 0.8) ease-in-out;
-  }
-  &:nth-child(2) {
-    transition: calc(0.5s * 1.2) ease-in-out;
-  }
-}
-
 @media screen and (min-width: 576px) {
   nav {
     .data {
       ul {
         grid-template-columns: repeat(5, 20%);
       }
+    }
+  }
+
+  .underline {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    width: 20%;
+    background-color: var(--accent-color);
+    height: calc(4px / 2);
+    mix-blend-mode: initial;
+    pointer-events: none;
+    transition: 0.5 ease-in-out;
+
+    &:nth-child(1) {
+      transition: calc(0.5s * 0.8) ease-in-out;
+    }
+    &:nth-child(2) {
+      transition: calc(0.5s * 1.2) ease-in-out;
     }
   }
 }
