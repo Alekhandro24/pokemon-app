@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { RotatingLines } from "react-loader-spinner";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { getInitialPokemonData } from "../app/reducers/getInitialPokemonData";
 import { getPokemonData } from "../app/reducers/getPokemonData";
@@ -57,7 +58,15 @@ const Search = () => {
           onChange={(e) => handleChange(e.target.value)}
         />
         {!randomPokemons ? (
-          "Pending"
+          <div className="loading">
+            <RotatingLines
+              strokeColor="#8BAA36"
+              strokeWidth="5"
+              animationDuration="0.75"
+              width="96"
+              visible={true}
+            />
+          </div>
         ) : (
           <PokemonCardGrid pokemons={randomPokemons!} />
         )}
