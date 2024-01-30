@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+![Pokemon App](./src/assets/readme/pokemon.jpg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+## Pokemon App
 
-## Available Scripts
+## Search Page
 
-In the project directory, you can run:
+![Search Page](./src/assets/readme/search.jpg)
 
-### `npm start`
+## Compare Page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Compare Page](./src/assets/readme/compare.jpg)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Pokemon Page
 
-### `npm test`
+![Pokemon Page](./src/assets/readme/pokemon.jpg)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Search Page](./src/assets/readme/evolution.jpg)
+![Search Page](./src/assets/readme/catching.jpg)
+![Search Page](./src/assets/readme/capable-moves.jpg)
 
-### `npm run build`
+## My List Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![My List Page](./src/assets/readme/my-list.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![My List Page](./src/assets/readme/my-list-log-in.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## About Page
 
-### `npm run eject`
+![About Page](./src/assets/readme/about.jpg)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Responsive Design: The website is designed to be fully responsive, adapting to different screen sizes starting from a minimum width of 320px. All images are optimized for various resolutions and screen sizes, ensuring a consistent and enjoyable experience across devices.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- The pages includes pagination functionality, allowing users to navigate between movie lists easily.
+- Loader: A loader is displayed during page loading, providing visual feedback to users while content is being fetched.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Technologies Used
 
-## Learn More
+## Contact Information
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Linkedin:** [alekhandro-lagonavarro](https://www.linkedin.com/in/alekhandro-lagonavarro/)
+- **GitHub:** [Alekhandro24](https://github.com/Alekhandro24)
+- **Tel:** [+380507695110](+380507695110)
+- **Email:** [lagoalekhandro@gmail.com](https://www.gmail.com)
