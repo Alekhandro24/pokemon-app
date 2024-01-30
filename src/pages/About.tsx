@@ -1,6 +1,6 @@
-import Wrapper from "../sections/Wrapper";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import avatarImage from "../assets/pikachu.png";
-import { FaYoutube, FaGithub, FaLinkedin } from "react-icons/fa";
+import Wrapper from "../sections/Wrapper";
 
 const About = () => {
   return (
@@ -12,13 +12,18 @@ const About = () => {
         This pet-project is create for my portfolio
       </h2>
       <div className="profile-links">
-        <a href="/">
+        <a
+          href="https://github.com/Alekhandro24"
+          target="_blank"
+          rel="noreferrer nofollow"
+        >
           <FaGithub />
         </a>
-        <a href="/">
-          <FaYoutube />
-        </a>
-        <a href="/">
+        <a
+          href="https://www.linkedin.com/in/alekhandro-lagonavarro/"
+          target="_blank"
+          rel="noreferrer nofollow"
+        >
           <FaLinkedin />
         </a>
       </div>
