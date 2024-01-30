@@ -1,16 +1,55 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  gap: 2rem;
+  color: white;
+  height: 80%;
+
+  &-text {
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 0.6rem;
+  }
+
+  &-image {
+    height: 10rem;
+    border-radius: 50%;
+    border: 0.3rem solid var(--accent-color);
+    background-color: white;
+    padding: 1rem;
+  }
+
+  &-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+
+    a {
+      color: var(--accent-color);
+
+      svg {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 576px) {
   .profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-top: 8rem;
-    gap: 2rem;
-    color: white;
-    height: 80%;
 
     &-text {
-      text-transform: uppercase;
       letter-spacing: 0.1rem;
     }
 
@@ -21,31 +60,9 @@
     h2 {
       font-size: 0.9rem;
     }
-
-    &-image {
-      height: 10rem;
-      border-radius: 50%;
-      border: 0.3rem solid var(--accent-color);
-      background-color: white;
-      padding: 1rem;
-    }
-
-    &-links {
-      display: flex;
-      gap: 2rem;
-      margin-top: 1rem;
-      cursor: pointer;
-
-      a {
-        color: var(--accent-color);
-
-        svg {
-          font-size: 3rem;
-        }
-      }
-    }
   }
 }
+
 @media screen and (min-width: 768px) {
   .profile {
     h2 {
