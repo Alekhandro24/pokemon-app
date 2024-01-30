@@ -21,11 +21,15 @@
     position: relative;
     border-top: none;
     border-bottom: none;
-    height: 80vh;
+    height: 72vh;
     background-color: rgba(255, 255, 255, 0.052);
     overflow: hidden;
-    // padding-bottom: 5rem;
+    margin-top: 3rem;
     overflow-y: scroll;
+  }
+
+  nav {
+    margin-bottom: -3rem;
   }
 }
 
@@ -41,9 +45,14 @@
 @media screen and (min-width: 576px) {
   .app {
     .content {
+      height: 80vh;
       margin: 0 5rem;
       border: 0.5px solid rgba(255, 255, 255, 0.203);
       padding-bottom: 10rem;
+    }
+
+    nav {
+      margin-bottom: -0;
     }
   }
 }
