@@ -23,6 +23,7 @@ You can choise two different pokemons and compare them on this page. If you clic
 Here we have pokemon info: evolution level, name, batlae stats of the pokemon, types of the Pokemon.
 
 ![Search Page](./src/assets/readme/evolution.jpg)
+
 If we click over - see next evolution – it’ll show you the different evolution level that this Pokemon has and when we click over any of that Pokemon then it will show you the evolution of that Pokemon. On the bottom of the page you can see the different tabs which will show you extra information about that Pokemon.
 
 ![Search Page](./src/assets/readme/catching.jpg)
